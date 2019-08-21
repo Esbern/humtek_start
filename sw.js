@@ -26,21 +26,21 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-b7daa06898d87efff0f7.js"
+    "url": "webpack-runtime-191213ffdbfa4862c4ab.js"
   },
   {
-    "url": "app-c85e6b7e5f12dd687c75.js"
+    "url": "app-6b0060bae2114a2bdd74.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-fb89f974cce56d7e8bc5.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a6de858454a5c87357915e459e3c3913"
+    "revision": "42c848c4f835edf6be3e410c506aaeee"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "a79b97dcbb116c9e62e3de5a45fd6fd5"
+    "revision": "e16fcaba71746d1cb13ff125c46f8ec0"
   },
   {
     "url": "manifest.webmanifest",
@@ -63,12 +63,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/esbern.github.io/humtek_start`), ``)
+  pathname = pathname.replace(new RegExp(`^/humtek_start`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/esbern.github.io/humtek_start/app-c85e6b7e5f12dd687c75.js`))) {
+  if (!resources || !(await caches.match(`/humtek_start/app-6b0060bae2114a2bdd74.js`))) {
     return await fetch(event.request)
   }
 
@@ -81,7 +81,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/esbern.github.io/humtek_start/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/humtek_start/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
