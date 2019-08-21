@@ -1,4 +1,6 @@
 module.exports = {
+     pathPrefix: "/humtek_start",
+  
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -18,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `HumTek-starter`,
+        short_name: `HT_starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
