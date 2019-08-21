@@ -22,7 +22,7 @@ module.exports = {
       options: {
         name: `HumTek-starter`,
         short_name: `HT_starter`,
-        start_url: `/`,
+        start_url: `/humtek_start/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
